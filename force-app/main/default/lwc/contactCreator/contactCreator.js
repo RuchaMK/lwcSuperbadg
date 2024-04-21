@@ -10,6 +10,9 @@ export default class ContactCreator extends LightningElement {
     objectApiName = CONTACT_OBJECT
     fields = [FIRSTNAME_FIELD, LASTNAME_FIELD, EMAIL_FIELD]
 
+    @wire(getContacts)
+    contactList;
+
     handleSuccess(event){
         const toastMsg = new showToastEvent({
             title: "Contact Record Created",
